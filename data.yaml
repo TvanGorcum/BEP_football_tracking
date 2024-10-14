@@ -1,0 +1,10 @@
+train: ../Data/train
+test: ../Data/test
+val: ../Data/valid
+nc: 4
+names: [
+'player'
+'ball'
+'goalkeeper'
+'referee'
+]
