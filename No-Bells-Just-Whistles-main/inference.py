@@ -6,6 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import torchvision.transforms as T
 import torchvision.transforms.functional as f
+import json
 
 from tqdm import tqdm
 from PIL import Image
@@ -84,6 +85,12 @@ def inference(cam, frame, model, model_l, kp_threshold, line_threshold):
 
     cam.update(final_dict[0])
     final_params_dict = cam.heuristic_voting()
+    #Save kp_coords and kp_dict here
+    #cv2.imwrite(save_path, projected_frame)
+    with open('results/keypoint_annotations.json', 'w') as json_file:
+        # Step 4: Write the dictionary to the file
+        json.dump(final_dict, json_file, indent=4)  # indent=4 for pretty printing
+        #These keypoints are correct
 
     return final_params_dict
 
