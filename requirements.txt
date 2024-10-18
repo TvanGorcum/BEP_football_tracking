@@ -44,9 +44,6 @@ six
 sympy 
 toml 
 tomli 
-torch==2.3.1
-torchaudio==2.3.1
-torchvision==0.18.1
 tornado 
 tqdm 
 triton==2.3.1
@@ -55,3 +52,4 @@ unicodedata2
 urllib3
 zipp
 zstandard==0.22.0
+ultralytics
