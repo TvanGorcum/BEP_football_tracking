@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import torchvision.transforms as T
 import torchvision.transforms.functional as f
 import json
-
+import os
 from tqdm import tqdm
 from PIL import Image
 from matplotlib.patches import Polygon
@@ -85,12 +85,7 @@ def inference(cam, frame, model, model_l, kp_threshold, line_threshold):
 
     cam.update(final_dict[0])
     final_params_dict = cam.heuristic_voting()
-    #Save kp_coords and kp_dict here
-    #cv2.imwrite(save_path, projected_frame)
-    with open('results/keypoint_annotations.json', 'w') as json_file:
-        # Step 4: Write the dictionary to the file
-        json.dump(final_dict, json_file, indent=4)  # indent=4 for pretty printing
-        #These keypoints are correct
+    print(final_params_dict)
 
     return final_params_dict
 
@@ -232,6 +227,7 @@ if __name__ == "__main__":
     kp_threshold = args.kp_threshold
     line_threshold = args.line_threshold
 
+    print(os.getcwd())
     cfg = yaml.safe_load(open("config/hrnetv2_w48.yaml", 'r'))
     cfg_l = yaml.safe_load(open("config/hrnetv2_w48_l.yaml", 'r'))
 

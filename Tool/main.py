@@ -27,12 +27,10 @@ def main():
     homography_matrix = keypoint_detector.detect_keypoints_and_homography(frames[0])  # Use first frame for pitch detection
 
     # Player and ball detection
-    player_detector = PlayerDetector(homography_matrix)
-    results = []
-    for frame in frames:
-        continue
-        #players, ball = player_detector.detect_players_and_ball(frame)
-        #results.append((players, ball))
+    playerdetections = PlayerDetector(input_path, output_path)
+    print(playerdetections)
+
+
 
 
     # Visualization (if enabled)
