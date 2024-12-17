@@ -54,3 +54,4 @@ zipp
 zstandard==0.22.0
 ultralytics
 #samurai installation: !git clone https://github.com/yangchris11/samurai.git
+#PNLcalib installation
