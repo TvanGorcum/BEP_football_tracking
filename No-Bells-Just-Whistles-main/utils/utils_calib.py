@@ -286,8 +286,10 @@ class FramebyFrameCalib:
                 return None
             if inverse:
                 H_inv = np.linalg.inv(H)
+                print(H_inv)
                 return H_inv / H_inv[-1, -1]
             else:
+                print(H)
                 return H
         else:
             return None

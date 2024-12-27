@@ -97,11 +97,16 @@ def estimate_homography_from_line_correspondences(lines, T1=np.eye(3), T2=np.eye
             break
 
     if not has_positive_singular_value:
+        print('Fase')
+        print(homography)
         return False, homography
+
 
     homography = np.reshape(v, (3, 3))
     homography = np.linalg.inv(T2) @ homography @ T1
     homography /= homography[2, 2]
+    print('True')
+    print(homography)
 
     return True, homography
 

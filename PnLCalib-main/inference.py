@@ -58,6 +58,8 @@ def projection_from_cam_params(final_params_dict):
                   [0, y_focal_length, principal_point[1]],
                   [0, 0, 1]])
     P = Q @ (rotation @ It)
+    print(P)
+
 
     return P
 
